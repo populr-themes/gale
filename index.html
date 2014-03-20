@@ -51,22 +51,21 @@
   {{#asset "imagegroup" size="1"}}
 
   {{#if_or title_visible description_visible}}
-  <div class="left">
-          <div class="content">
-              {{{imageslider images src="{{{resize original_url width=365 height=200}}}" width="365" height="200" crop_single=true }}}
-
-          </div>
-  </div>
-  <div class="floated-parent-for-imagegroup-texts">
+    <div class="left">
+      <div class="content">
+        {{{imageslider images src="{{{resize original_url width=362 height=200}}}" width="362" height="200" crop_single=true }}}
+      </div>
+    </div>
+    <div class="floated-parent-for-imagegroup-texts">
       {{{title}}}
       {{{description}}}
-  </div>
+    </div>
   {{else}}
       <div class="content">
-          {{{imageslider images src="{{{resize original_url width=1030 height=500}}}" width="1030" height="500" crop_single=true }}}
+        {{{imageslider images src="{{{resize original_url width=938 height=500}}}" width="938" height="500" crop_single=true }}}
       </div>
-  {{{title}}}
-  {{{description}}}
+    {{{title}}}
+    {{{description}}}
   {{/if_or}}
 
   {{/asset}}
@@ -84,7 +83,7 @@
         </div>
       {{/asset}}
 
-  {{#asset "embedgroup" size="1" width="1040"}}
+  {{#asset "embedgroup" size="1" width="940"}}
 
   {{#if_or title_visible description_visible}}
   <div class="left">
@@ -138,7 +137,7 @@
         {{#if_or title_visible description_visible}}
         <div class="left">
             <div class="content">
-            {{{imageslider images src="{{{resize original_url width=247 height=143}}}" width="247" height="143" crop_single=true }}}
+            {{{imageslider images src="{{{resize original_url width=253 height=143}}}" width="253" height="143" crop_single=true }}}
             </div>
 
         </div>
@@ -149,7 +148,7 @@
         {{else}}
 
             <div class="content">
-        {{{imageslider images src="{{{resize original_url width=688 height=387}}}" width="688" height="387" crop_single=true }}}
+        {{{imageslider images src="{{{resize original_url width=678 height=387}}}" width="678" height="387" crop_single=true }}}
         </div>
 
         {{{title}}}
@@ -162,7 +161,7 @@
       {{#asset "imagegroup" size="2"}}
       {{{title}}}
       <div class="content">
-      {{{imageslider images src="{{{resize original_url width=367 height=212}}}" width="367" height="212" crop_single=true}}}
+      {{{imageslider images src="{{{resize original_url width=327 height=212}}}" width="327" height="212" crop_single=true}}}
       </div>
       {{{description}}}
       {{/asset}}
@@ -214,7 +213,7 @@
           </div>
         {{/asset}}
 
-      {{#asset "embedgroup" size="1" width="688"}}
+      {{#asset "embedgroup" size="1" width="328"}}
 
       {{#if_or title_visible description_visible}}
       <div class="left">
