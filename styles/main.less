@@ -1,28 +1,15 @@
-//@import 'bizzare';
-//todo cleaning
-
 // You must import variables.less before importing populr_mixins.less
 @import 'variables';
 //adding the pallets
 @import 'palette-custom';
 @import 'palette-default';
 @import 'http://populr.me/assets/developers/populr_mixins.less';
-//todo cleanup later
-//@import '../todo/populr_mixins (1)';
 @import 'preboot';
-//@import '//fonts.googleapis.com/css?family=Average&.css';
-// @import '//fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic';
-// @import '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700';
-// @import '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800';
 
 // Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
 
-/////////////////////////////////////////////////////////////////////////
-// Typography defaults
-// @body-font-family: 'Sorts Mill Goudy', serif;
-// @headline-font-family: 'Roboto Condensed', sans-serif;
-// @pop-title-font-family:'Open Sans', sans-serif;
+
 
 
 .headline-font() {
@@ -58,17 +45,7 @@ body {
   .box-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
-/*.asset .description, .asset .content, .asset .description p, .asset .content p, .asset .content ul, .asset .content ol, .asset .content li, .asset .description ul, .asset .description ol, .asset .description li {
 
-  text-align: left;
-
-  font-size: @base-font-size;
-  line-height: @baseline;
-
-  #sidebar-region & {
-    font-size: @base-font-size - 2px;
-  }
-}*/
 
 //////Default styles for  font  classes to achieve consistency across assets
 ////
@@ -173,9 +150,6 @@ b, strong {
     vertical-align: middle;
     margin-right: -0.25em; /* Adjusts for spacing */
 
-    /* For visualization
-    background: #808080; width: 5px;
-    */
   }
   #pop-logo {
     display: inline-block;
@@ -206,7 +180,6 @@ div#pop-parent-for-title-links {
     .pop-title-text();
 
     color: #d2d2d2;
-    //  text-align: center;
     .has-links & {
       max-width: 680px;
 
@@ -231,20 +204,7 @@ div#pop-parent-for-title-links {
 
 }
 
-//thin border for all size2,1 assets
-//#top-region .asset-size-1 {
-//
-//  border-bottom: 1px solid #ddd;
-//
-////  &:hover {
-////    border-bottom-color: @custom-color;
-////    transition: all 0.4s ease 0s;
-////  }
-//
-//  .ie7 & {
-//    border-bottom: none;
-//  }
-//}
+
 #sidebar-region .asset-size-1 {
   border-bottom: none;
   .asset-title {
@@ -262,7 +222,6 @@ div#pop-parent-for-title-links {
 #main-content {
   width: 940px;
   margin: 0 auto;
-//  border: 1px solid #ddd;
   background-color: #fff;
   position: relative;
   .box-shadow(0 0 15px rgba(0, 0, 0, 0.35) ~',' inset 0 0 50px rgba(0, 0, 0, 0.1));
@@ -280,8 +239,6 @@ div#pop-parent-for-title-links {
   width: 940px;
   margin: 20px 0 54px 0;
   .asset h2 {
-//    font-size: 30px;
-//    line-height: 54px;
     padding-left: 0;
     background-color: transparent;
     &::before, &::after {
@@ -295,16 +252,11 @@ div#pop-parent-for-title-links {
       margin-top: 0;
     }
   }
-//  .embed {
-//    margin: 0 140px;
-//  }
 }
 
 #main-region {
   float: left;
-  //  width: (@column-width * 12) + (@baseline * 12);
   width: 680px;
-//  margin-right: @baseline;
   margin-right: 50px;
 
   .columnizer-row.columnizer-cols2 {
@@ -313,8 +265,6 @@ div#pop-parent-for-title-links {
     }
     .columnizer-col {
       float: left;
-      /*width: (@column-width * 6) + (@baseline * 5);
-      margin-left: @baseline;*/
       width: 327.5px;
       margin-left: 25px;
     }
@@ -323,7 +273,6 @@ div#pop-parent-for-title-links {
 
 #sidebar-region {
   float: right;
-  //  width: (@column-width * 4) + (@baseline * 3);
   width:210px;
 
   .asset {
@@ -400,11 +349,7 @@ div#pop-parent-for-title-links {
   border: 5px solid #fff;
 }
 
-//todo check for error
-.populr-image-slider .enabled {
-//  padding-bottom: 10px;
-//  padding-left: 10px;
-}
+
 
 
 #top-region {
@@ -560,33 +505,13 @@ div#pop-parent-for-title-links {
   &.file-extension-zip { background-position: -256px -288px; }
 }
 
-/*.asset-type-videogroup .playlist {
-  margin: 10px 0 0 -10px;
-  padding: 0;
-  list-style: none;
-}
 
-.asset-type-videogroup .playlist li {
-  list-style: none;
-  float: left;
-  margin-left: 10px;
-}
-
-.asset-type-videogroup video {
-  display: block;
-}*/
 
 // Image asset styling
 
 #populr > #image-slider-themes > .basic(@bg-color: fade(#fff, 50%));
 
 
-/*.populr-image-slider .slideshow:hover .prevnext.cycle-next, .populr-image-slider .slideshow.hover .prevnext.cycle-next {
-  right: 23px;
-  #sidebar-region & {
-    right: 18px;
-  }
-}*/
 
 .asset-type-imagegroup {
   .description {
@@ -753,7 +678,6 @@ div#pop-parent-for-title-links {
 
   }
   #main-content {
-//    width: 960px !important;
     width: auto !important;
 
   }
