@@ -6,6 +6,16 @@
   <title>Mundus</title>
 
 
+    <!--
+   Dummy content parameters
+ -->
+    <!-- dummyImageCategory: specify search term for images to pull from 500px -->
+    <meta itemprop="dummyImageCategory" content="All">
+    <!-- dummyContentLength: specify how much dummy text appears within each asset -->
+    <!-- Value can be set to short, medium or long -->
+    <meta itemprop="dummyContentLength" content="medium">
+
+
       <meta itemprop="palette" content="palette-default" title="Default" data-preview="#ffffff,#1d1d1d">
       <meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">
   <!-- Add any styles your theme requires here -->
@@ -49,12 +59,13 @@
   {{#asset "imagegroup" size="1"}}
 
   {{#if_or title_visible description_visible}}
+  <div class="has-title-description">
     <div class="left">
       <div class="content">
         {{{imageslider images src="{{{resize original_url width=362 height=200}}}" width="362" height="200" crop_single=true }}}
       </div>
     </div>
-    <div class="floated-parent-for-imagegroup-texts">
+
       {{{title}}}
       {{{description}}}
     </div>
@@ -84,6 +95,7 @@
   {{#asset "embedgroup" size="1" width="940"}}
 
   {{#if_or title_visible description_visible}}
+  <div class="has-title-description">
   <div class="left">
       <div class="embeds">
           {{#embeds}}
@@ -93,7 +105,7 @@
           {{/embeds}}
       </div>
   </div>
-  <div class="floated-parent-for-imagegroup-texts">
+
       {{{title}}}
       {{{description}}}
   </div>
@@ -133,13 +145,14 @@
         {{#asset "imagegroup" size="1"}}
 
         {{#if_or title_visible description_visible}}
+        <div class="has-title-description">
         <div class="left">
             <div class="content">
             {{{imageslider images src="{{{resize original_url width=253 height=143}}}" width="253" height="143" crop_single=true }}}
             </div>
 
         </div>
-        <div class="floated-parent-for-imagegroup-texts">
+
             {{{title}}}
             {{{description}}}
         </div>
@@ -171,10 +184,11 @@
         {{#asset "documentgroup" size="1"}}
 
         {{#if title_visible }}
+        <div class="has-title-description">
         <div class="left">
             {{{title}}}
         </div>
-        <div class="floated-parent-for-imagegroup-texts">
+
             {{{description}}}
             <div class="content">
                 <ul class="documents">
@@ -214,6 +228,7 @@
       {{#asset "embedgroup" size="1" width="328"}}
 
       {{#if_or title_visible description_visible}}
+        <div class="has-title-description">
       <div class="left">
           <div class="embeds">
               {{#embeds}}
@@ -223,7 +238,7 @@
               {{/embeds}}
           </div>
       </div>
-      <div class="floated-parent-for-imagegroup-texts">
+
           {{{title}}}
           {{{description}}}
       </div>
