@@ -1,29 +1,13 @@
-//@import 'bizzare';
-//todo cleaning
-
 // You must import variables.less before importing populr_mixins.less
 @import 'variables';
 //adding the pallets
 @import 'palette-custom';
 @import 'palette-default';
 @import 'http://populr.me/assets/developers/populr_mixins.less';
-//todo cleanup later
-//@import '../todo/populr_mixins (1)';
 @import 'preboot';
-//@import '//fonts.googleapis.com/css?family=Average&.css';
-// @import '//fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic';
-// @import '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700';
-// @import '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800';
 
 // Call preboot.less's reset to reduce browser inconsistencies
 #reset > .global-reset();
-
-/////////////////////////////////////////////////////////////////////////
-// Typography defaults
-// @body-font-family: 'Sorts Mill Goudy', serif;
-// @headline-font-family: 'Roboto Condensed', sans-serif;
-// @pop-title-font-family:'Open Sans', sans-serif;
-
 
 .headline-font() {
   font-family: @headline-font-family;
@@ -35,13 +19,12 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .pop-title-text() {
-  font-family:@pop-title-font-family;
+  font-family: @pop-title-font-family;
   font-size: @pop-title-font-size;
-  line-height: 1.8;
+  line-height: 1.5;
 }
-
-
 
 body {
   background: #333 url("@{base-url}/images/dark_linen.png") repeat top left;
@@ -58,43 +41,28 @@ body {
   .box-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
-/*.asset .description, .asset .content, .asset .description p, .asset .content p, .asset .content ul, .asset .content ol, .asset .content li, .asset .description ul, .asset .description ol, .asset .description li {
-
-  text-align: left;
-
-  font-size: @base-font-size;
-  line-height: @baseline;
-
-  #sidebar-region & {
-    font-size: @base-font-size - 2px;
-  }
-}*/
-
 //////Default styles for  font  classes to achieve consistency across assets
 ////
 
+.asset-title {
+  font-family: @headline-font-family;
+  font-size: 30px;
+  line-height: 1.8;
+  color: @text-color;
+  margin-bottom: 18px;
 
-
-  .asset-title {
-    font-family: @headline-font-family;
-    font-size: 30px;
-    line-height: 1.8;
-    color: @text-color;
-    margin-bottom: 18px;
-
-    #sidebar-region & {
-      font-size: 24px;
-    }
-    #top-region & {
-      font-size: 50px;
-    }
-
+  #sidebar-region & {
+    font-size: 24px;
+  }
+  #top-region & {
+    font-size: 50px;
   }
 
+}
 
 //desc font settings
 
-.description, .body, .description li, .body li,.content {
+.description, .body, .description li, .body li, .content {
 
   font-family: @body-font-family;
   color: @text-color;
@@ -104,7 +72,7 @@ body {
     font-size: 14px;
   }
   #top-region & {
-    font-size :20px !important;
+    font-size: 20px !important;
   }
 }
 
@@ -146,12 +114,10 @@ b, strong {
   font-weight: 700;
 }
 
-
 // End typography defaults
 /////////////////////////////////////////////////////////////////////////
 #pop-parent-for-bg {
   width: 100%;
-  max-height: 280px;
   min-height: 20px;
   text-align: center;
   background: #333 url("@{base-url}/images/background-image.png") no-repeat center;
@@ -173,9 +139,6 @@ b, strong {
     vertical-align: middle;
     margin-right: -0.25em; /* Adjusts for spacing */
 
-    /* For visualization
-    background: #808080; width: 5px;
-    */
   }
   #pop-logo {
     display: inline-block;
@@ -188,25 +151,21 @@ b, strong {
 
 }
 
-div#pop-parent-for-title-links {
-  min-height: 10px;
-}
 #pop-parent-for-title-links {
   position: relative;
-//  to fill the full width
+  //  to fill the full width
   margin-left: -@baseline;
   background-color: #1D1D1D;
   margin-bottom: @baseline;
   width: 980px;
   display: table;
   #pop-title {
-    padding-left: 70px;
+    padding: 20px 70px;
     display: table-cell;
     vertical-align: middle;
     .pop-title-text();
 
     color: #d2d2d2;
-    //  text-align: center;
     .has-links & {
       max-width: 680px;
 
@@ -216,35 +175,21 @@ div#pop-parent-for-title-links {
       padding-top: 15px;
     }
   }
-#pop-links {
-  padding-right: 70px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  
-  .lt-ie8 & {
-    position: absolute;
-    top: 15px;
-    right: 0;
+  #pop-links {
+    padding-right: 70px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+
+    .lt-ie8 & {
+      position: absolute;
+      top: 15px;
+      right: 0;
+    }
   }
-}
 
 }
 
-//thin border for all size2,1 assets
-//#top-region .asset-size-1 {
-//
-//  border-bottom: 1px solid #ddd;
-//
-////  &:hover {
-////    border-bottom-color: @custom-color;
-////    transition: all 0.4s ease 0s;
-////  }
-//
-//  .ie7 & {
-//    border-bottom: none;
-//  }
-//}
 #sidebar-region .asset-size-1 {
   border-bottom: none;
   .asset-title {
@@ -258,11 +203,9 @@ div#pop-parent-for-title-links {
 
 }
 
-
 #main-content {
   width: 940px;
   margin: 0 auto;
-//  border: 1px solid #ddd;
   background-color: #fff;
   position: relative;
   .box-shadow(0 0 15px rgba(0, 0, 0, 0.35) ~',' inset 0 0 50px rgba(0, 0, 0, 0.1));
@@ -280,8 +223,6 @@ div#pop-parent-for-title-links {
   width: 940px;
   margin: 20px 0 54px 0;
   .asset h2 {
-//    font-size: 30px;
-//    line-height: 54px;
     padding-left: 0;
     background-color: transparent;
     &::before, &::after {
@@ -295,16 +236,17 @@ div#pop-parent-for-title-links {
       margin-top: 0;
     }
   }
-//  .embed {
-//    margin: 0 140px;
-//  }
+  .has-title-description {
+    .asset-title {
+      text-align: left;
+    }
+
+  }
 }
 
 #main-region {
   float: left;
-  //  width: (@column-width * 12) + (@baseline * 12);
   width: 680px;
-//  margin-right: @baseline;
   margin-right: 50px;
 
   .columnizer-row.columnizer-cols2 {
@@ -313,8 +255,6 @@ div#pop-parent-for-title-links {
     }
     .columnizer-col {
       float: left;
-      /*width: (@column-width * 6) + (@baseline * 5);
-      margin-left: @baseline;*/
       width: 327.5px;
       margin-left: 25px;
     }
@@ -323,27 +263,26 @@ div#pop-parent-for-title-links {
 
 #sidebar-region {
   float: right;
-  //  width: (@column-width * 4) + (@baseline * 3);
-  width:210px;
+  width: 210px;
 
   .asset {
-    margin-bottom: 65px;
+    margin-bottom: 20px;
     padding-bottom: 0 !important;
     .asset-title {
       margin-bottom: 25px;
     }
 
   }
-  .asset-type-embedgroup,.asset-type-imagegroup {
+  .asset-type-embedgroup, .asset-type-imagegroup {
     .description {
       margin-top: 25px;
     }
   }
 }
 
-
-
-.columnizer-cols1 .columnizer-row-contents-imagegroup { height: auto; }
+.columnizer-cols1 .columnizer-row-contents-imagegroup {
+  height: auto;
+}
 
 //box shadow for image asset
 .asset-type-imagegroup .content {
@@ -378,41 +317,27 @@ div#pop-parent-for-title-links {
     -o-transform: skew(5deg) rotate(5deg);
     transform: skew(5deg) rotate(5deg);
   }
+}
 
-////   box shadow fixes
-//    width: 100% !important;
-//   .populr-image-slider
-//   {
-//   .slideshow {
-//
-//     border:1px solid #ccc;
-//     width: 100% !important;
-//     .slide {
-//       width: 100%;
-//       img {
-//         width: 100%;
-//       }
-//       a {
-//         width: 100% !important;
-//       }
-//     }
-//
-//   }
-//     .fancybox-enabled {
-//       img {
-//         padding-right: 10px;
-//       }
-//     }
-//
-//
-//   }
+//fixes on slider box shadow
+//this maybe non conventional fix but nothing to do
+[data-fancybox-enabled="true"] {
+  .slide img {
+    width: 100%;
+  }
+}
 
+[data-enabled="true"] {
+  padding-bottom: 10px;
+}
 
+[data-fancybox-enabled=""] {
+  padding-bottom: 0;
 }
 
 .asset-type-imagegroup .content img {
-   display: block;
-   border: 5px solid #fff;
+  display: block;
+  border: 5px solid #fff;
   background-color: #fff;
   .border-box();
 }
@@ -420,13 +345,6 @@ div#pop-parent-for-title-links {
 .asset-type-imagegroup .slide a {
   border: 5px solid #fff;
 }
-
-//todo check for error
-.populr-image-slider .enabled {
-//  padding-bottom: 10px;
-//  padding-left: 10px;
-}
-
 
 #top-region {
   .asset-type-videogroup,
@@ -437,7 +355,6 @@ div#pop-parent-for-title-links {
       }
     }
   }
-
 
 }
 
@@ -467,7 +384,7 @@ div#pop-parent-for-title-links {
   }
   a {
     text-decoration: none;
-   color: @text-color ;
+    color: @text-color;
   }
 }
 
@@ -478,136 +395,314 @@ div#pop-parent-for-title-links {
   text-indent: -9999px;
   vertical-align: middle;
   background: transparent url("@{base-url}/images/file-icons.png") no-repeat -128px -224px;
-  &.file-extension-3gp { background-position: 0px 0px; }
-  &.file-extension-7z { background-position: -32px 0px; }
-  &.file-extension-ace { background-position: 0px -32px; }
-  &.file-extension-ai { background-position: -32px -32px; }
-  &.file-extension-aif { background-position: -64px 0px; }
-  &.file-extension-aiff { background-position: -64px -32px; }
-  &.file-extension-amr { background-position: 0px -64px; }
-  &.file-extension-asf { background-position: -32px -64px; }
-  &.file-extension-asx { background-position: -64px -64px; }
-  &.file-extension-bat { background-position: -96px 0px; }
-  &.file-extension-bin { background-position: -96px -32px; }
-  &.file-extension-bmp { background-position: -96px -64px; }
-  &.file-extension-bup { background-position: 0px -96px; }
-  &.file-extension-cab { background-position: -32px -96px; }
-  &.file-extension-cbr { background-position: -64px -96px; }
-  &.file-extension-cda { background-position: -96px -96px; }
-  &.file-extension-cdl { background-position: -128px 0px; }
-  &.file-extension-cdr { background-position: -128px -32px; }
-  &.file-extension-chm { background-position: -128px -64px; }
-  &.file-extension-dat { background-position: -128px -96px; }
-  &.file-extension-divx { background-position: 0px -128px; }
-  &.file-extension-dll { background-position: -32px -128px; }
-  &.file-extension-dmg { background-position: -64px -128px; }
-  &.file-extension-doc { background-position: -96px -128px; }
-  &.file-extension-docx { background-position: -96px -128px; }
-  &.file-extension-dss { background-position: -128px -128px; }
-  &.file-extension-dvf { background-position: -160px 0px; }
-  &.file-extension-dwg { background-position: -160px -32px; }
-  &.file-extension-eml { background-position: -160px -64px; }
-  &.file-extension-eps { background-position: -160px -96px; }
-  &.file-extension-exe { background-position: -160px -128px; }
-  &.file-extension-fla { background-position: 0px -160px; }
-  &.file-extension-flv { background-position: -32px -160px; }
-  &.file-extension-gif { background-position: -64px -160px; }
-  &.file-extension-gz { background-position: -96px -160px; }
-  &.file-extension-hqx { background-position: -128px -160px; }
-  &.file-extension-htm { background-position: -160px -160px; }
-  &.file-extension-html { background-position: -192px 0px; }
-  &.file-extension-ifo { background-position: -192px -32px; }
-  &.file-extension-indd { background-position: -192px -64px; }
-  &.file-extension-iso { background-position: -192px -96px; }
-  &.file-extension-jar { background-position: -192px -128px; }
-  &.file-extension-jpeg { background-position: -192px -160px; }
-  &.file-extension-jpg { background-position: 0px -192px; }
-  &.file-extension-lnk { background-position: -32px -192px; }
-  &.file-extension-log { background-position: -64px -192px; }
-  &.file-extension-m4a { background-position: -96px -192px; }
-  &.file-extension-m4b { background-position: -128px -192px; }
-  &.file-extension-m4p { background-position: -160px -192px; }
-  &.file-extension-m4v { background-position: -192px -192px; }
-  &.file-extension-mcd { background-position: -224px 0px; }
-  &.file-extension-mdb { background-position: -224px -32px; }
-  &.file-extension-mid { background-position: -224px -64px; }
-  &.file-extension-mov { background-position: -224px -96px; }
-  &.file-extension-mp2 { background-position: -224px -128px; }
-  &.file-extension-mp4 { background-position: -224px -160px; }
-  &.file-extension-mpeg { background-position: -224px -192px; }
-  &.file-extension-mpg { background-position: 0px -224px; }
-  &.file-extension-msi { background-position: -32px -224px; }
-  &.file-extension-mswmm { background-position: -64px -224px; }
-  &.file-extension-ogg { background-position: -96px -224px; }
-  &.file-extension-page_white { background-position: -128px -224px; }
-  &.file-extension-pdf { background-position: -160px -224px; }
-  &.file-extension-png { background-position: -192px -224px; }
-  &.file-extension-pps { background-position: -224px -224px; }
-  &.file-extension-ps { background-position: -256px 0px; }
-  &.file-extension-psd { background-position: -256px -32px; }
-  &.file-extension-pst { background-position: -256px -64px; }
-  &.file-extension-ptb { background-position: -256px -96px; }
-  &.file-extension-pub { background-position: -256px -128px; }
-  &.file-extension-qbb { background-position: -256px -160px; }
-  &.file-extension-qbw { background-position: -256px -192px; }
-  &.file-extension-qxd { background-position: -256px -224px; }
-  &.file-extension-ram { background-position: 0px -256px; }
-  &.file-extension-rar { background-position: -32px -256px; }
-  &.file-extension-rm { background-position: -64px -256px; }
-  &.file-extension-rmvb { background-position: -96px -256px; }
-  &.file-extension-rtf { background-position: -128px -256px; }
-  &.file-extension-sea { background-position: -160px -256px; }
-  &.file-extension-ses { background-position: -192px -256px; }
-  &.file-extension-sit { background-position: -224px -256px; }
-  &.file-extension-sitx { background-position: -256px -256px; }
-  &.file-extension-ss { background-position: -288px 0px; }
-  &.file-extension-swf { background-position: -288px -32px; }
-  &.file-extension-tgz { background-position: -288px -64px; }
-  &.file-extension-thm { background-position: -288px -96px; }
-  &.file-extension-tif { background-position: -288px -128px; }
-  &.file-extension-tmp { background-position: -288px -160px; }
-  &.file-extension-torrent { background-position: -288px -192px; }
-  &.file-extension-ttf { background-position: -288px -224px; }
-  &.file-extension-txt { background-position: -288px -256px; }
-  &.file-extension-vcd { background-position: 0px -288px; }
-  &.file-extension-vob { background-position: -32px -288px; }
-  &.file-extension-wav { background-position: -64px -288px; }
-  &.file-extension-wma { background-position: -96px -288px; }
-  &.file-extension-wmv { background-position: -128px -288px; }
-  &.file-extension-wps { background-position: -160px -288px; }
-  &.file-extension-xls { background-position: -192px -288px; }
-  &.file-extension-xlsx { background-position: -192px -288px; }
-  &.file-extension-xpi { background-position: -224px -288px; }
-  &.file-extension-zip { background-position: -256px -288px; }
+  &.file-extension-3gp {
+    background-position: 0px 0px;
+  }
+  &.file-extension-7z {
+    background-position: -32px 0px;
+  }
+  &.file-extension-ace {
+    background-position: 0px -32px;
+  }
+  &.file-extension-ai {
+    background-position: -32px -32px;
+  }
+  &.file-extension-aif {
+    background-position: -64px 0px;
+  }
+  &.file-extension-aiff {
+    background-position: -64px -32px;
+  }
+  &.file-extension-amr {
+    background-position: 0px -64px;
+  }
+  &.file-extension-asf {
+    background-position: -32px -64px;
+  }
+  &.file-extension-asx {
+    background-position: -64px -64px;
+  }
+  &.file-extension-bat {
+    background-position: -96px 0px;
+  }
+  &.file-extension-bin {
+    background-position: -96px -32px;
+  }
+  &.file-extension-bmp {
+    background-position: -96px -64px;
+  }
+  &.file-extension-bup {
+    background-position: 0px -96px;
+  }
+  &.file-extension-cab {
+    background-position: -32px -96px;
+  }
+  &.file-extension-cbr {
+    background-position: -64px -96px;
+  }
+  &.file-extension-cda {
+    background-position: -96px -96px;
+  }
+  &.file-extension-cdl {
+    background-position: -128px 0px;
+  }
+  &.file-extension-cdr {
+    background-position: -128px -32px;
+  }
+  &.file-extension-chm {
+    background-position: -128px -64px;
+  }
+  &.file-extension-dat {
+    background-position: -128px -96px;
+  }
+  &.file-extension-divx {
+    background-position: 0px -128px;
+  }
+  &.file-extension-dll {
+    background-position: -32px -128px;
+  }
+  &.file-extension-dmg {
+    background-position: -64px -128px;
+  }
+  &.file-extension-doc {
+    background-position: -96px -128px;
+  }
+  &.file-extension-docx {
+    background-position: -96px -128px;
+  }
+  &.file-extension-dss {
+    background-position: -128px -128px;
+  }
+  &.file-extension-dvf {
+    background-position: -160px 0px;
+  }
+  &.file-extension-dwg {
+    background-position: -160px -32px;
+  }
+  &.file-extension-eml {
+    background-position: -160px -64px;
+  }
+  &.file-extension-eps {
+    background-position: -160px -96px;
+  }
+  &.file-extension-exe {
+    background-position: -160px -128px;
+  }
+  &.file-extension-fla {
+    background-position: 0px -160px;
+  }
+  &.file-extension-flv {
+    background-position: -32px -160px;
+  }
+  &.file-extension-gif {
+    background-position: -64px -160px;
+  }
+  &.file-extension-gz {
+    background-position: -96px -160px;
+  }
+  &.file-extension-hqx {
+    background-position: -128px -160px;
+  }
+  &.file-extension-htm {
+    background-position: -160px -160px;
+  }
+  &.file-extension-html {
+    background-position: -192px 0px;
+  }
+  &.file-extension-ifo {
+    background-position: -192px -32px;
+  }
+  &.file-extension-indd {
+    background-position: -192px -64px;
+  }
+  &.file-extension-iso {
+    background-position: -192px -96px;
+  }
+  &.file-extension-jar {
+    background-position: -192px -128px;
+  }
+  &.file-extension-jpeg {
+    background-position: -192px -160px;
+  }
+  &.file-extension-jpg {
+    background-position: 0px -192px;
+  }
+  &.file-extension-lnk {
+    background-position: -32px -192px;
+  }
+  &.file-extension-log {
+    background-position: -64px -192px;
+  }
+  &.file-extension-m4a {
+    background-position: -96px -192px;
+  }
+  &.file-extension-m4b {
+    background-position: -128px -192px;
+  }
+  &.file-extension-m4p {
+    background-position: -160px -192px;
+  }
+  &.file-extension-m4v {
+    background-position: -192px -192px;
+  }
+  &.file-extension-mcd {
+    background-position: -224px 0px;
+  }
+  &.file-extension-mdb {
+    background-position: -224px -32px;
+  }
+  &.file-extension-mid {
+    background-position: -224px -64px;
+  }
+  &.file-extension-mov {
+    background-position: -224px -96px;
+  }
+  &.file-extension-mp2 {
+    background-position: -224px -128px;
+  }
+  &.file-extension-mp4 {
+    background-position: -224px -160px;
+  }
+  &.file-extension-mpeg {
+    background-position: -224px -192px;
+  }
+  &.file-extension-mpg {
+    background-position: 0px -224px;
+  }
+  &.file-extension-msi {
+    background-position: -32px -224px;
+  }
+  &.file-extension-mswmm {
+    background-position: -64px -224px;
+  }
+  &.file-extension-ogg {
+    background-position: -96px -224px;
+  }
+  &.file-extension-page_white {
+    background-position: -128px -224px;
+  }
+  &.file-extension-pdf {
+    background-position: -160px -224px;
+  }
+  &.file-extension-png {
+    background-position: -192px -224px;
+  }
+  &.file-extension-pps {
+    background-position: -224px -224px;
+  }
+  &.file-extension-ps {
+    background-position: -256px 0px;
+  }
+  &.file-extension-psd {
+    background-position: -256px -32px;
+  }
+  &.file-extension-pst {
+    background-position: -256px -64px;
+  }
+  &.file-extension-ptb {
+    background-position: -256px -96px;
+  }
+  &.file-extension-pub {
+    background-position: -256px -128px;
+  }
+  &.file-extension-qbb {
+    background-position: -256px -160px;
+  }
+  &.file-extension-qbw {
+    background-position: -256px -192px;
+  }
+  &.file-extension-qxd {
+    background-position: -256px -224px;
+  }
+  &.file-extension-ram {
+    background-position: 0px -256px;
+  }
+  &.file-extension-rar {
+    background-position: -32px -256px;
+  }
+  &.file-extension-rm {
+    background-position: -64px -256px;
+  }
+  &.file-extension-rmvb {
+    background-position: -96px -256px;
+  }
+  &.file-extension-rtf {
+    background-position: -128px -256px;
+  }
+  &.file-extension-sea {
+    background-position: -160px -256px;
+  }
+  &.file-extension-ses {
+    background-position: -192px -256px;
+  }
+  &.file-extension-sit {
+    background-position: -224px -256px;
+  }
+  &.file-extension-sitx {
+    background-position: -256px -256px;
+  }
+  &.file-extension-ss {
+    background-position: -288px 0px;
+  }
+  &.file-extension-swf {
+    background-position: -288px -32px;
+  }
+  &.file-extension-tgz {
+    background-position: -288px -64px;
+  }
+  &.file-extension-thm {
+    background-position: -288px -96px;
+  }
+  &.file-extension-tif {
+    background-position: -288px -128px;
+  }
+  &.file-extension-tmp {
+    background-position: -288px -160px;
+  }
+  &.file-extension-torrent {
+    background-position: -288px -192px;
+  }
+  &.file-extension-ttf {
+    background-position: -288px -224px;
+  }
+  &.file-extension-txt {
+    background-position: -288px -256px;
+  }
+  &.file-extension-vcd {
+    background-position: 0px -288px;
+  }
+  &.file-extension-vob {
+    background-position: -32px -288px;
+  }
+  &.file-extension-wav {
+    background-position: -64px -288px;
+  }
+  &.file-extension-wma {
+    background-position: -96px -288px;
+  }
+  &.file-extension-wmv {
+    background-position: -128px -288px;
+  }
+  &.file-extension-wps {
+    background-position: -160px -288px;
+  }
+  &.file-extension-xls {
+    background-position: -192px -288px;
+  }
+  &.file-extension-xlsx {
+    background-position: -192px -288px;
+  }
+  &.file-extension-xpi {
+    background-position: -224px -288px;
+  }
+  &.file-extension-zip {
+    background-position: -256px -288px;
+  }
 }
-
-/*.asset-type-videogroup .playlist {
-  margin: 10px 0 0 -10px;
-  padding: 0;
-  list-style: none;
-}
-
-.asset-type-videogroup .playlist li {
-  list-style: none;
-  float: left;
-  margin-left: 10px;
-}
-
-.asset-type-videogroup video {
-  display: block;
-}*/
 
 // Image asset styling
 
 #populr > #image-slider-themes > .basic(@bg-color: fade(#fff, 50%));
-
-
-/*.populr-image-slider .slideshow:hover .prevnext.cycle-next, .populr-image-slider .slideshow.hover .prevnext.cycle-next {
-  right: 23px;
-  #sidebar-region & {
-    right: 18px;
-  }
-}*/
 
 .asset-type-imagegroup {
   .description {
@@ -619,12 +714,13 @@ div#pop-parent-for-title-links {
     .left {
       width: 255px;
       float: left;
+      margin-right: 25px;
+      margin-bottom: 35px;
 
       #top-region & {
-        width:365px ;
+        width: 365px;
       }
     }
-
 
     .asset-inner:after {
       visibility: hidden;
@@ -635,20 +731,10 @@ div#pop-parent-for-title-links {
       height: 0;
     }
 
-    .floated-parent-for-imagegroup-texts {
-      float: right;
-      width: 400px;
-
-      #top-region & {
-        width: 550px;
-      }
-
-    }
-
   }
 
-
 }
+
 //Text asset styling
 .asset-type-text {
   &.asset-size-1 {
@@ -662,6 +748,7 @@ div#pop-parent-for-title-links {
     }
   }
 }
+
 //Document asset styling
 .asset-type-documentgroup {
 
@@ -677,8 +764,9 @@ div#pop-parent-for-title-links {
     .left {
       width: 255px;
       float: left;
+      margin-right: 25px;
+      margin-bottom: 35px;
     }
-
 
     .asset-inner:after {
       visibility: hidden;
@@ -687,12 +775,6 @@ div#pop-parent-for-title-links {
       content: ' ';
       clear: both;
       height: 0;
-    }
-
-    .floated-parent-for-imagegroup-texts {
-      float: right;
-      width: 400px;
-
     }
 
   }
@@ -720,12 +802,12 @@ div#pop-parent-for-title-links {
     .left {
       width: 255px;
       float: left;
-
+      margin-right: 25px;
+      margin-bottom: 35px;
       #top-region & {
-        width:365px ;
+        width: 365px;
       }
     }
-
 
     .asset-inner:after {
       visibility: hidden;
@@ -736,18 +818,7 @@ div#pop-parent-for-title-links {
       height: 0;
     }
 
-    .floated-parent-for-imagegroup-texts {
-      float: right;
-      width: 400px;
-
-      #top-region & {
-        width: 550px;
-      }
-
-    }
-
   }
-
 
 }
 
@@ -755,56 +826,106 @@ div#pop-parent-for-title-links {
   #populr > .mobile-reset();
 
   // Edit the grid for mobile
-  .columnizer-row-inner, #pop-title { max-width: 640px; }
-  .columnizer-col { margin: 0 10px 20px !important; }
+  .columnizer-row-inner, #pop-title {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .columnizer-col {
+    margin: 0 10px 20px !important;
+  }
 
   // Edit the typography for mobile
-  #pop-title { font-size: 40px !important; }
-  .asset-title { font-size: 24px !important; }
-  .description, .body, .description li, .body li { font-size: 14px !important; }
-  .asset-title, .description, .body, .description li, .body li { text-align: left !important; }
-
-  #main-region, #top-region {margin-right: 0;}
-  .asset-type-videogroup .content, .asset-type-imagegroup .content {
-    &:before, &:after {bottom: 11px !important;}
+  #pop-title {
+    font-size: 40px !important;
   }
+
+  .asset-title {
+    font-size: 24px !important;
+  }
+
+  .description, .body, .description li, .body li {
+    font-size: 14px !important;
+  }
+
+  .asset-title, .description, .body, .description li, .body li {
+    text-align: left !important;
+  }
+
+  #main-region, #top-region {
+    margin-right: 0;
+  }
+
+  .asset-type-videogroup .content, .asset-type-imagegroup .content {
+    &:before, &:after {
+      bottom: 11px !important;
+    }
+  }
+
   #main-region .columnizer-row.columnizer-cols2 .columnizer-col {
 
     margin-left: 0;
 
   }
+
+  #top-region {
+    border-bottom: none;
+  }
+
   #main-content {
-//    width: 960px !important;
     width: auto !important;
 
   }
+
   #pop-parent-for-title-links {
-    width: 104.3%;
-
-  }
-//  Image asset styling
-#top-region .asset-type-imagegroup ,.asset-type-embedgroup ,.asset-type-documentgroup,
-#main-region .asset-type-imagegroup ,.asset-type-embedgroup ,.asset-type-documentgroup{
-  &.asset-size-1 {
-    .left {
-      width :40% !important;
+    width: 100%;
+    padding: 0 20px;
+    #pop-title {
+      padding: 20px 50px;
     }
-    .floated-parent-for-imagegroup-texts {
-      width:55% !important;
+    #pop-links {
+      padding-right:30px;
     }
   }
 
-}
+  .left {
+    float: none !important;
+    width: auto !important;
+    margin: 0 auto 25px !important;
+  }
+
+//  mobile fix on slider
+  #pop .populr-image-slider .enabled .slide,
+  #pop .populr-image-slider .enabled .slide a,
+  #pop .populr-image-slider .enabled .slide img {
+    height: auto !important;
+    width: auto !important;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
-  #pop-title { font-size: 32px !important; }
-  .asset-title { font-size: 20px !important; }
-  #pop-parent-for-title-links { width: 112% !important; }
+  #pop-title {
+    font-size: 32px !important;
+  }
+
+  .asset-title {
+    font-size: 20px !important;
+  }
+
+  #pop-parent-for-title-links {
+    width: 100% !important;
+    #pop-title {
+      padding: 20px 10px;
+    }
+    #pop-links {
+      padding-right:10px;
+    }
+  }
+
+
   .populr-mobile-noresize {
-    width: 250px;
     margin: 0 auto;
-    padding-top: 20px;
   }
 }
 
