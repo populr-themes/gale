@@ -24,10 +24,14 @@
   font-family: @pop-title-font-family;
   font-size: @pop-title-font-size;
   line-height: 1.5;
+  text-shadow: 1px 1px 0px #414040;
+  filter: dropshadow(color=#111, offx=2, offy=2);
+  letter-spacing: -2px
 }
 
 body {
-  background: #333 url("@{base-url}/images/dark_linen.png") repeat top left;
+  background: #333 url("@{base-url}/images/subtle_surface.png") repeat top left;
+  // background: #333 url("@{base-url}/images/dark_linen.png") repeat top left;
 }
 
 #pop {
@@ -37,7 +41,7 @@ body {
 #main-content {
   background: #fff;
 
-  padding: @baseline - 1px @baseline @baseline @baseline;
+  padding: 30px;
   .box-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
@@ -46,7 +50,7 @@ body {
 
 .asset-title {
   font-family: @headline-font-family;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.8;
   color: @text-color;
   margin-bottom: 18px;
@@ -55,7 +59,7 @@ body {
     font-size: 24px;
   }
   #top-region & {
-    font-size: 50px;
+    font-size: 25px;
   }
 
 }
@@ -69,10 +73,10 @@ body {
   font-size: 16px;
   line-height: 1.57 !important;
   #sidebar-region & {
-    font-size: 14px;
+    font-size: 16px;
   }
   #top-region & {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
 }
 
@@ -117,70 +121,48 @@ b, strong {
 // End typography defaults
 /////////////////////////////////////////////////////////////////////////
 #pop-parent-for-bg {
-  width: 100%;
-  min-height: 20px;
   text-align: center;
-  background: #333 url("@{base-url}/images/abstract.jpg") no-repeat center;
-  background-size: cover;
-  //  to fill the full width
-  padding-left: @baseline;
-  padding-right: @baseline;
-  margin-top: -@baseline;
-  margin-left: -@baseline;
-  //  fix for custom background
-  div.fullbg-container img {
-    width: 100% !important;
-    left: 0 !important;
-  }
+  height: auto;
+  // border-top: 1px solid #A2A2A2;
+  padding: 8px 0;
 
-  &:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; /* Adjusts for spacing */
-
-  }
-  #pop-logo {
-    display: inline-block;
-    vertical-align: middle;
-    width: 360px;
-    height: 260px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-
-}
-
-#pop-parent-for-title-links {
-  position: relative;
-  //  to fill the full width
-  margin-left: -@baseline;
-  background-color: #1D1D1D;
-  margin-bottom: @baseline;
-  min-height: 8px;
-  width: 980px;
-  display: table;
   #pop-title {
-    padding: 20px 70px;
-    display: table-cell;
+    padding: 10px;
     vertical-align: middle;
+    border-bottom: 1px solid #ccc;
     .pop-title-text();
-
-    color: #d2d2d2;
-    .has-links & {
-      max-width: 680px;
-
-    }
-
+    color: @text-color;
     .lt-ie8 & {
       padding-top: 15px;
     }
   }
+}
+
+#pop-logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 360px;
+  height: 260px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+
+
+#pop-parent-for-title-links {
+  position: relative;
+  //  to fill the full width
+
+  min-height: 8px;
+  display: table;
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0 0;
+  width: 100%;
+
   #pop-links {
-    padding-right: 70px;
+    padding-bottom: 20px;
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: bottom;
     text-align: right;
 
     .lt-ie8 & {
@@ -199,11 +181,6 @@ b, strong {
   }
 }
 
-//padding setting
-.asset {
-  padding-bottom: 35px !important;
-
-}
 
 #main-content {
   width: 940px;
@@ -220,10 +197,11 @@ b, strong {
 #top-region {
   text-align: center;
   border-bottom: 4px double #CCCCCC;
+  padding-bottom: 25px;
   .border-box();
   float: left;
   width: 940px;
-  margin: 20px 0 54px 0;
+  margin: 8px 0 54px 0;
   .asset h2 {
     padding-left: 0;
     background-color: transparent;
@@ -249,7 +227,7 @@ b, strong {
 #main-region {
   float: left;
   width: 680px;
-  margin-right: 50px;
+  margin-right: 20px;
 
   .columnizer-row.columnizer-cols2 {
     .columnizer-col.first {
@@ -266,6 +244,8 @@ b, strong {
 #sidebar-region {
   float: right;
   width: 210px;
+  border-left: 1px solid #ccc;
+  padding-left: 29px;
 
   .asset {
     margin-bottom: 20px;
@@ -829,7 +809,6 @@ b, strong {
 
   // Edit the grid for mobile
   .columnizer-row-inner, #pop-title {
-    max-width: 640px;
     margin: 0 auto;
   }
 
@@ -866,6 +845,11 @@ b, strong {
 
   }
 
+  #sidebar-region {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+
   #main-content {
     width: auto !important;
 
@@ -873,12 +857,8 @@ b, strong {
 
   #pop-parent-for-title-links {
     width: 100%;
-    padding: 0 20px;
     #pop-title {
       padding: 20px 50px;
-    }
-    #pop-links {
-      padding-right:30px;
     }
   }
 
@@ -900,14 +880,14 @@ b, strong {
 
 @media screen and (max-width: 600px) {
   #pop-title {
-    font-size: 20px !important;
+    font-size: 27px !important;
   }
 
 
   #top-region {
-    margin: 30px 0;
     .body, .description { font-size: 16px !important; }
   }
+
 
   .asset-title {
     font-size: 20px !important;
@@ -919,9 +899,6 @@ b, strong {
     width: 100% !important;
     #pop-title {
       padding: 20px 10px;
-    }
-    #pop-links {
-      padding-right:10px;
     }
   }
 
