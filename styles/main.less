@@ -269,7 +269,7 @@ b, strong {
 }
 
 //box shadow for image asset
-.asset-type-imagegroup .content {
+.asset-type-imagegroup .content, .embeds {
   .border-box();
   border: 1px solid #ddd;
   background-color: #fff;
@@ -802,6 +802,11 @@ b, strong {
       height: 0;
     }
 
+  }
+  .embed-loading { width: 100% !important; }
+  .embeds {
+    margin-bottom: 15px;
+    &:before { height: 4px; }
   }
 
 }
